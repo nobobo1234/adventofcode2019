@@ -47,7 +47,10 @@ function part2() {
             const digit = digitArray[j];
 
             if (digit === previousDigit) sameDigitCount++;
-            if (digit !== previousDigit && sameDigitCount === 1) {
+            if (
+                (digit !== previousDigit && sameDigitCount === 1) ||
+                (j === digitArray.length - 1 && sameDigitCount === 1)
+            ) {
                 adjecent = true;
                 sameDigitCount = 0;
             }
