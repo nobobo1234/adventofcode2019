@@ -53,6 +53,8 @@ function part2() {
             ) {
                 adjecent = true;
                 sameDigitCount = 0;
+            } else if (digit !== previousDigit && sameDigitCount > 1) {
+                sameDigitCount = 0;
             }
 
             if (previousDigit > digit) {
@@ -61,7 +63,6 @@ function part2() {
             }
         }
 
-        if (!decreased && adjecent) console.log(i);
         if (!decreased && adjecent) count++;
     }
     return count;
